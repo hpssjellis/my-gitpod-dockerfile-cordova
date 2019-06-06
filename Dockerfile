@@ -12,10 +12,9 @@ RUN apt-get update \
 
  
 
-USER gitpod
 
-RUN  mkdir my-gitpod-dockerfile-cordova/myLogs \
-     && touch my-gitpod-dockerfile-cordova/myLogs/logs.txt
+RUN  mkdir ~/my-gitpod-dockerfile-cordova/myLogs \
+     && touch ~/my-gitpod-dockerfile-cordova/myLogs/logs.txt
 
 #wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip 
 #\
@@ -24,6 +23,7 @@ RUN  mkdir my-gitpod-dockerfile-cordova/myLogs \
   #  && ./android/tools/bin/sdkmanager --list 
 
 
+#USER gitpod
 
 #RUN mkdir -p ~/pg/data; mkdir -p ~/pg/scripts; mkdir -p ~/pg/logs; mkdir -p ~/pg/sockets; initdb -D pg/data/
 
