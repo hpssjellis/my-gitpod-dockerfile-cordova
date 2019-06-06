@@ -7,9 +7,6 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                     \
     && mkdir -p /home/gitpod/rocksetta/android               \ 
     && mkdir -p /home/gitpod/rocksetta/qrcode-cordova        \
     && touch /home/gitpod/rocksetta/logs/mylogs.txt          \
-
-
-
     && wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
     && rm sdk-tools-linux-4333796.zip                                                  \
