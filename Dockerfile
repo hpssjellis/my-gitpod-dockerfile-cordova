@@ -9,11 +9,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                     \
     && touch /home/gitpod/rocksetta/logs/mylogs.txt          \
     && wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
-    && rm sdk-tools-linux-4333796.zip                                                  
-    
-    
-    #\
-   # && ./home/gitpod/rocksetta/android/tools/bin/sdkmanager --list      &>>  /home/gitpod/rocksetta/logs/mylogs.txt              
+    && rm sdk-tools-linux-4333796.zip                                                  \
+    && ./home/gitpod/rocksetta/android/tools/bin/sdkmanager --list      &>>  /home/gitpod/rocksetta/logs/mylogs.txt              
 
 
 #RUN apt-get update \
