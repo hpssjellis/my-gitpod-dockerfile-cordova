@@ -1,0 +1,96 @@
+image:
+  file: Dockerfile
+
+tasks:
+  -  init: touch logs.txt  &&
+           mkdir android  &&
+           mkdir node-cordova  &&
+           mkdir node-qrcode  
+           
+           
+             
+             
+     command: echo "ls -la"           &>> /workspace/my-gitpod-cordova/logs.txt  &&    
+              ls -la                  &>> /workspace/my-gitpod-cordova/logs.txt  &&        
+              echo                    &>> /workspace/my-gitpod-cordova/logs.txt  &&         
+              
+              echo "pwd"              &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              pwd                     &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+              echo                    &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+              
+              echo "java -version"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              java -version           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                    &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+                            
+              echo "wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip           &>>  /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                                                                &>> /workspace/my-gitpod-cordova/logs.txt  &&   
+           
+              echo "unzip sdk-tools-linux-4333796.zip -d android"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              unzip sdk-tools-linux-4333796.zip -d android                                                      &&     
+              echo                                                   &>> /workspace/my-gitpod-cordova/logs.txt  &&  
+             
+              echo "rm sdk-tools-linux-4333796.zip"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              rm sdk-tools-linux-4333796.zip           &>>  /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                     &>> /workspace/my-gitpod-cordova/logs.txt  &&       
+              
+
+              
+              echo "./android/tools/bin/sdkmanager --list"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              ./android/tools/bin/sdkmanager --list           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                            &>> /workspace/my-gitpod-cordova/logs.txt  &&                  
+              
+              
+     
+              echo 'yes | ./android/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"'    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              yes | ./android/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                                                                                        &>> /workspace/my-gitpod-cordova/logs.txt  &&            
+              
+              
+              
+              
+              echo 'export ANDROID_SDK_ROOT="/workspace/my-gitpod-cordova/android/"'    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              export ANDROID_SDK_ROOT="/workspace/my-gitpod-cordova/android/"           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo  $ANDROID_SDK_ROOT                                                   &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+              echo                                                                      &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+              
+              
+             
+              echo 'export PATH="${PATH}:${ANDROID_SDK_ROOT}tools/:${ANDROID_SDK_ROOT}platform-tools/"'    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              export PATH="${PATH}:${ANDROID_SDK_ROOT}tools/:${ANDROID_SDK_ROOT}platform-tools/"           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                                                                         &>> /workspace/my-gitpod-cordova/logs.txt  &&       
+              
+              
+              
+            
+              
+              echo "npm install --prefix /workspace/my-gitpod-cordova/node-cordova   cordova"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              npm install --prefix /workspace/my-gitpod-cordova/node-cordova   cordova           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                                                           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              
+               
+              
+              echo "npm install --prefix /workspace/my-gitpod-cordova/node-qrcode qrcode"    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              npm install --prefix /workspace/my-gitpod-cordova/node-qrcode qrcode           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                                                        &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+                    
+         
+       
+              echo 'export PATH="${PATH}:/workspace/my-gitpod-cordova/node-qrcode/node_modules/:/workspace/my-gitpod-cordova/node-cordova/node_modules/cordova/bin:/workspace/my-gitpod-cordova/node-qrcode/node_modules/qrcode/bin:/workspace/my-gitpod-cordova/node-qrcode/node_modules"'    &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              export PATH="${PATH}:/workspace/my-gitpod-cordova/node-qrcode/node_modules/:/workspace/my-gitpod-cordova/node-cordova/node_modules/cordova/bin:/workspace/my-gitpod-cordova/node-qrcode/node_modules/qrcode/bin:/workspace/my-gitpod-cordova/node-qrcode/node_modules"           &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo  $PATH                  &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                         &>> /workspace/my-gitpod-cordova/logs.txt  &&            
+         
+         
+             
+              chmod +x a01-create.sh               &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+              chmod +x a02-re-build.sh             &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              chmod +x a03-copy-to-folder.sh       &>> /workspace/my-gitpod-cordova/logs.txt  &&       
+         
+              
+              echo "javac -version"   &>> /workspace/my-gitpod-cordova/logs.txt  &&             
+              javac -version          &>> /workspace/my-gitpod-cordova/logs.txt  &&      
+              echo                    &>> /workspace/my-gitpod-cordova/logs.txt  
+              
+              
+ 
