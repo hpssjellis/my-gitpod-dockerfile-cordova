@@ -14,7 +14,7 @@ RUN apt-get update \
 #USER gitpod
 
 
-RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
+#RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
 
 
 #RUN mkdir -p /home/gitpod/workspace/gptemp
@@ -36,7 +36,15 @@ RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
   #  && ./android/tools/bin/sdkmanager --list 
 
 
-#USER gitpod
+
+
+
+USER gitpod
+
+RUN cd /home/gitpod  && mkdir fred && touch tom.txt
+
+
+
 
 #RUN mkdir -p ~/pg/data; mkdir -p ~/pg/scripts; mkdir -p ~/pg/logs; mkdir -p ~/pg/sockets; initdb -D pg/data/
 
