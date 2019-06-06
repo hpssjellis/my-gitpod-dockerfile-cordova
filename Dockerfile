@@ -13,7 +13,7 @@ RUN apt-get update \
 
 USER gitpod
 
-RUN echo "Hello"
+RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 
 #RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
 
