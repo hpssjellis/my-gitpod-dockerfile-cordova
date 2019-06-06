@@ -11,8 +11,8 @@ RUN apt-get update \
 
 
  
-RUN mkdir /home/gitpod/test
-RUN touch /home/gitpod/test/text.txt
+RUN mkdir coolJer
+RUN touch coolJer/cooltest.txt
 
 #RUN  mkdir ~/my-gitpod-dockerfile-cordova/myLogs \
 #     && touch ~/my-gitpod-dockerfile-cordova/myLogs/logs.txt
