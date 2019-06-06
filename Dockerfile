@@ -13,7 +13,8 @@ RUN apt-get update \
 
 #USER gitpod
 
-RUN echo "\nHope This Works\nAnd also this\n" >> /home/gitpod/logs.txt \
+
+RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
 
 
 #RUN mkdir -p /home/gitpod/workspace/gptemp
