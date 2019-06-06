@@ -12,8 +12,8 @@ RUN  apt-get update                                             \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
     && rm sdk-tools-linux-4333796.zip                                                  \
     && chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager                   \
-    && yes | ./home/gitpod/rocksetta/android/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"    \
-    && apt-get install -y default-jdk                                                                                             \
+    && yes | /home/gitpod/rocksetta/android/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"    \
+    && apt-get install -y default-jdk                                                                                            \
     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
     
     
