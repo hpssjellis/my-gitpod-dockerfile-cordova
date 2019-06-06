@@ -10,8 +10,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                     \
     && wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
     && rm sdk-tools-linux-4333796.zip                                                  \
-    && chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager
-    
+    && chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager                   \
+    && /home/gitpod/rocksetta/android/tools/bin/sdkmanager --list      &>>  /home/gitpod/rocksetta/logs/mylogs.txt    
     
     
     #\
