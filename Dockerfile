@@ -10,12 +10,9 @@ RUN apt-get update \
 
 
 
-RUN mkdir /tmp/volume
-RUN echo "hello" > /tmp/volume/hello
-VOLUME ["/tmp/volume/"]
-RUN [[ -f /tmp/volume/hello ]]
-RUN rm /tmp/volume/hello
-RUN [[ ! -e /tmp/volume/hello ]]
+
+USER gitpod
+RUN mkdir /home/gitpod/workspace/my-gitpod-dockerfile-cordova/gp-temp
 
 
 
