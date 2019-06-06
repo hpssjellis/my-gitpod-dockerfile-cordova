@@ -4,7 +4,8 @@ USER root
 
 # Install custom tools, runtime, etc.
 RUN apt-get update \
-    && apt-get install -y default-jdk 
+    && apt-get install -y default-jdk \
+    && mkdir /home/gitpod/workarea 
     #\
     #&& apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
@@ -12,9 +13,9 @@ RUN apt-get update \
 
 
 
-USER gitpod
+#USER gitpod
 
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+#RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 
 #RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
 
@@ -41,9 +42,9 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 
 
 
-USER gitpod
+#USER gitpod
 
-RUN cd /home/gitpod  && mkdir fred && touch tom.txt
+#RUN cd /home/gitpod  && mkdir fred && touch tom.txt
 
 
 
@@ -60,4 +61,4 @@ RUN cd /home/gitpod  && mkdir fred && touch tom.txt
 
 
 # Give back control
-USER root
+#USER root
