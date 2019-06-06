@@ -10,10 +10,19 @@ RUN apt-get update \
 
 
 
-USER gitpod 
+RUN mkdir /tmp/volume
+RUN echo "hello" > /tmp/volume/hello
+VOLUME ["/tmp/volume/"]
+RUN [[ -f /tmp/volume/hello ]]
+RUN rm /tmp/volume/hello
+RUN [[ ! -e /tmp/volume/hello ]]
 
-RUN mkdir coolJer
-RUN touch coolJer/cooltest.txt
+
+
+#USER gitpod 
+
+#RUN mkdir coolJer
+#RUN touch coolJer/cooltest.txt
 
 #RUN  mkdir ~/my-gitpod-dockerfile-cordova/myLogs \
 #     && touch ~/my-gitpod-dockerfile-cordova/myLogs/logs.txt
