@@ -14,9 +14,33 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
     && rm sdk-tools-linux-4333796.zip                                                  \
     && chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager                   
-    
-    
-    
+ 
+ ENV ANDROID_SDK_ROOT /home/gitpod/rocksetta/android
+ ENV ANDROID_HOME /home/gitpod/rocksetta/android
+ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+ 
+ #ENV PATH ${PATH}:/home/gitpod/rocksetta/android/tools:/home/gitpod/rocksetta/android/tools/bin:/home/gitpod/rocksetta/android/platform-tools   
+
+ RUN yes | sdkmanager --licenses
+ 
+ RUN sdkmanager  "tools" "platform-tools"
+ 
+ 
+ RUN yes | sdkmanager        \
+     "platform-tools"        \
+    "platforms;android-28"   \
+    "build-tools;28.0.3" 
+
+
+# --- Install Gradle from PPA
+
+# Gradle PPA
+RUN apt-get update \
+ && apt-get -y install gradle \
+ && gradle -v
+
+RUN npm install -g ionic cordova
+ 
 #RUN yes | /home/gitpod/rocksetta/android/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"    
 
     
@@ -38,7 +62,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 #    && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 
-
+# Cleaning
+RUN apt-get clean
 
 # Give back control
 #USER root
