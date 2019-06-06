@@ -10,7 +10,8 @@ RUN apt-get update \
 
 
 
- 
+USER gitpod 
+
 RUN mkdir coolJer
 RUN touch coolJer/cooltest.txt
 
