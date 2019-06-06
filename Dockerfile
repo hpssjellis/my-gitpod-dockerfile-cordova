@@ -5,7 +5,7 @@ USER root
 
 #RUN /bin/bash -c 'source $HOME/.bashrc; echo $HOME'
 #RUN /bin/bash -c 'mkdir fred'
-RUN mkdir -p /home/myfred
+RUN mkdir -p /usr/bin/myfred
 
 #CMD mkdir -p /home/mytom
 
