@@ -11,10 +11,11 @@ RUN apt-get update \
 
 
  
+RUN mkdir /home/gitpod/test
+RUN touch /home/gitpod/test/text.txt
 
-
-RUN  mkdir ~/my-gitpod-dockerfile-cordova/myLogs \
-     && touch ~/my-gitpod-dockerfile-cordova/myLogs/logs.txt
+#RUN  mkdir ~/my-gitpod-dockerfile-cordova/myLogs \
+#     && touch ~/my-gitpod-dockerfile-cordova/myLogs/logs.txt
 
 #wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip 
 #\
