@@ -12,7 +12,7 @@ RUN apt-get update \
 
  
 
-#USER gitpod
+USER gitpod
 
 
 
