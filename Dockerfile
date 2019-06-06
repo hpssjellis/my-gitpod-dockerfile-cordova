@@ -11,9 +11,9 @@ RUN apt-get update \
 
 
 
-USER gitpod
+#USER gitpod
 
-RUN echo "\n# Disable gyp_chromium for faster updates." >> /home/gitpod/.bashrc \
+RUN echo "\nHope This Works\nAnd also this\n" >> /home/gitpod/logs.txt \
 
 
 #RUN mkdir -p /home/gitpod/workspace/gptemp
