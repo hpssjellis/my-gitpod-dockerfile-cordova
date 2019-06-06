@@ -12,7 +12,7 @@ RUN apt-get update \
 
 
 USER gitpod
-RUN mkdir /home/gitpod/workspace/my-gitpod-dockerfile-cordova/gp-temp
+RUN mkdir /home/gitpod/workspace/gptemp
 
 
 
