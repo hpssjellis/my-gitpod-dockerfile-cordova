@@ -1,2 +1,2 @@
 # my-gitpod-dockerfile-cordova
-Testing if I can change a gitpod yml file to a docker file
+Testing if I can change a gitpod yml file to a Dockerfile
