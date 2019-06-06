@@ -11,8 +11,9 @@ RUN apt-get update \
 
 
 
-#USER gitpod
+USER gitpod
 
+RUN echo "Hello"
 
 #RUN echo "\nHope This Works\nAnd also this\n" &>> logs.txt \
 
