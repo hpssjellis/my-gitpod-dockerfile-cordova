@@ -7,7 +7,7 @@ USER root
 #RUN /bin/bash -c 'mkdir fred'
 RUN mkdir -p /home/myfred
 
-CMD mkdir -p /home/mytom
+#CMD mkdir -p /home/mytom
 
 # Install custom tools, runtime, etc.
 RUN apt-get update \
