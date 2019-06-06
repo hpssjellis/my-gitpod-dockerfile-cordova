@@ -14,8 +14,8 @@ RUN apt-get update \
 
 USER gitpod
 
-RUN touch logs.txt \
-     && mkdir myTemp
+RUN  mkdir my-gitpod-dockerfile-cordova/myLogs \
+     && touch my-gitpod-dockerfile-cordova/myLogs/logs.txt
 
 #wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip 
 #\
