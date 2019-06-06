@@ -11,8 +11,8 @@ RUN apt-get update \
 
 
 
-USER gitpod
-RUN mkdir /home/gitpod/workspace/gptemp
+#USER gitpod
+RUN mkdir -p /home/gitpod/workspace/gptemp
 
 
 
