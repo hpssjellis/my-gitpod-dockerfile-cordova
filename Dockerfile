@@ -29,8 +29,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 #        echo y | /home/gitpod/rocksetta/android/tools/bin/sdkmanager update sdk --filter $filter --no-ui --force --all; \
 #    done
 
-#RUN printf 'y\ny\ny\ny\ny\ny\n' | sdkmanager --licenses
-RUN printf 'yyyyyy' | sdkmanager --licenses
+RUN printf 'y\ny\ny\ny\ny\n' | sdkmanager --licenses
+#RUN printf 'yyyyyy' | sdkmanager --licenses
 
 #RUN sdkmanager 'platform-tools'
 
