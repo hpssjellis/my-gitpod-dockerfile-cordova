@@ -32,8 +32,9 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 RUN printf 'y\ny\ny\ny\ny\n' | sdkmanager --licenses
 #RUN printf 'yyyyyy' | sdkmanager --licenses
 
+RUN printf "y\ny\ny\ny\ny\ny\n" | sdkmanager --licenses
 
-RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
+#RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
 
 #RUN sdkmanager 'platform-tools'
 
