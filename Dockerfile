@@ -25,7 +25,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
     && wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
     && rm sdk-tools-linux-4333796.zip                                                  \  
-    && chmod 777 -R /home/gitpod/rocksetta 
+    && chmod 755 -R /home/gitpod/rocksetta 
     
     #&& chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager                   
  
