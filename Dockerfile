@@ -21,15 +21,15 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  
  #ENV PATH ${PATH}:/home/gitpod/rocksetta/android/tools:/home/gitpod/rocksetta/android/tools/bin:/home/gitpod/rocksetta/android/platform-tools   
 
-RUN for filter in tools platform-tools android-28 extra build-tools-28.0.3; do \
-        echo y | /home/gitpod/rocksetta/android/tools/bin/sdkmanager update sdk --filter $filter --no-ui --force --all; \
-    done
+#RUN for filter in tools platform-tools android-28 extra build-tools-28.0.3; do \
+#        echo y | /home/gitpod/rocksetta/android/tools/bin/sdkmanager update sdk --filter $filter --no-ui --force --all; \
+#    done
 
 
 
 
 
- #RUN sdkmanager --licenses
+ RUN echo y |sdkmanager --licenses "platform-tools"  "platforms;android-28"   "build-tools;28.0.3" 
  
  #RUN sdkmanager  "tools" "platform-tools"
  
