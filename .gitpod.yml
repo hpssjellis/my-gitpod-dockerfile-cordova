@@ -21,9 +21,9 @@ tasks:
 
            
            
-           echo "./sdkmanager --list"                      &>> /workspace/my-gitpod-cordova/logs.txt  &&           
-           ./sdkmanager --list                             &>> /workspace/my-gitpod-cordova/logs.txt  &&     
-           echo                                            &>> /workspace/my-gitpod-cordova/logs.txt  &&                  
+              echo "sdkmanager --list"                        &>> /workspace/my-gitpod-cordova/logs.txt  &&           
+              sdkmanager --list                               &>> /workspace/my-gitpod-cordova/logs.txt  &&     
+              echo                                            &>> /workspace/my-gitpod-cordova/logs.txt  &&                  
               
               
               
