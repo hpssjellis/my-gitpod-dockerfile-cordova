@@ -43,8 +43,8 @@ RUN apt-get update \
 RUN npm install -g cordova qrcode
  
 #----- specific to gitpod
-USER gitpod
-   RUN chmod +x a01-create.sh && chmod +x a02-re-build.sh && chmod +x a03-copy-to-folder.sh
+#USER gitpod
+   #RUN chmod +x a01-create.sh && chmod +x a02-re-build.sh && chmod +x a03-copy-to-folder.sh
    
    
 
@@ -52,7 +52,7 @@ USER gitpod
 
 
 # Give back control
-USER root
+#USER root
 
 # Cleaning
 RUN apt-get clean
