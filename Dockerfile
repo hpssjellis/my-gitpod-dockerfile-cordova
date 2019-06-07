@@ -23,10 +23,12 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
  
  
- RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn '"${ANDROID_HOME}"'/tools/bin/sdkmanager --licenses; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
+ #RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn '"${ANDROID_HOME}"'/tools/bin/sdkmanager --licenses; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
+ 
+ RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
  #RUN (echo y; echo y; echo y; echo y; echo y; echo y) | sdkmanager --licenses
- RUN sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28" 
+ #RUN sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28" 
  
  
  
