@@ -6,7 +6,11 @@ RUN apt-get update \
     && apt-get install -y default-jdk \
     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
-
+ 
+ ENV ANDROID_SDK_ROOT /home/gitpod
+ ENV ANDROID_HOME /home/gitpod
+ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+ 
 
 # test more android installation
 
