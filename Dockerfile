@@ -44,7 +44,6 @@ USER gitpod
 
 
 
-RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 
 
@@ -61,6 +60,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  
     # && chmod 755 -R /home/gitpod/rocksetta    
  
+ RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
+
  
  ENV ANDROID_SDK_ROOT /home/gitpod/rocksetta/android
  ENV ANDROID_HOME /home/gitpod/rocksetta/android
