@@ -20,7 +20,7 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip   
     && rm sdk-tools-linux-4333796.zip   
     
     
-RUN yes | sdkmanager --licenses && yes | sdkmanager --update
+RUN yes | /home/gitpod/tools/bin/sdkmanager --licenses && yes | /home/gitpod/tools/bin/sdkmanager --update
 
 
     #\
