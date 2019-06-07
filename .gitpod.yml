@@ -17,7 +17,10 @@ tasks:
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a01-create.sh                &&    
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a02-re-build.sh              &&    
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a03-copy-to-folder.sh        &&    
-                      
+              chmod +x /workspace/my-gitpod-dockerfile-cordova/a04-read-Docker-log.sh      &&    
+           
+           
+           
               
               
               
