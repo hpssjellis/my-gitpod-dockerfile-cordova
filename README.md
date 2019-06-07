@@ -1,4 +1,4 @@
-# my-gitpod-android-install
+# my-gitpod-dockerfile-cordova
 
 
 Testing the difference between gitpod Dockerfiles and .gitpod.yml files
