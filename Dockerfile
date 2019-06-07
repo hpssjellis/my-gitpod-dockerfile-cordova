@@ -25,6 +25,10 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 #        echo y | /home/gitpod/rocksetta/android/tools/bin/sdkmanager update sdk --filter $filter --no-ui --force --all; \
 #    done
 
+#RUN for filter in tools platform-tools android-28 extra build-tools-28.0.3; do \
+#        echo y | /home/gitpod/rocksetta/android/tools/bin/sdkmanager update sdk --filter $filter --no-ui --force --all; \
+#    done
+
 
 
 #RUN sdkmanager 'platform-tools'
@@ -32,7 +36,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  #RUN  sdkmanager "platform-tools"  "platforms;android-28"   "build-tools;28.0.3" 
  
  
- RUN echo yes | sdkmanager "platform-tools" "platforms;android-28"
+ RUN echo y | sdkmanager "platform-tools";
+ 
  #RUN sdkmanager --no-ui --force --all "platform-tools" 
 
  
