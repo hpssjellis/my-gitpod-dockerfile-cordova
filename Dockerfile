@@ -7,6 +7,18 @@ RUN apt-get update \
     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
 
+
+# test more android installation
+
+
+RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
+    && unzip sdk-tools-linux-4333796.zip    
+    #\
+   # && RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  ./android/tools/bin/sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
+
+
+
+
 # --- Install Gradle from PPA
 
 # Gradle PPA
@@ -42,7 +54,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  
  #RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
  
- RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
+ #RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
  #RUN #!/bin/bash /usr/bin/expect -c ' cd /home/gitpod/rocksetta/android;   set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
@@ -59,7 +71,7 @@ RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylo
 
 
 
-USER root
+#USER root
 
 
 # Install the android software tools. Needs a fancy loop to accept licenses
@@ -69,7 +81,7 @@ USER root
 #RUN pwd >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 
-WORKDIR /home/gitpod/rocksetta/android/
+#WORKDIR /home/gitpod/rocksetta/android/
 
 
 #RUN echo "Where are we after WORKDIR change\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
