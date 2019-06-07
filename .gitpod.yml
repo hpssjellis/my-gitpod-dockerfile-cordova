@@ -19,13 +19,9 @@ tasks:
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a03-copy-to-folder.sh        &&    
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a04-read-Docker-log.sh       &&    
 
-           
-           
-              echo "sdkmanager --list"                        &>> /workspace/my-gitpod-cordova/logs.txt  &&           
-              sdkmanager --list                               &>> /workspace/my-gitpod-cordova/logs.txt  &&     
-              echo                                            &>> /workspace/my-gitpod-cordova/logs.txt  &&                  
-              
-              
+             
+              yes | sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"       &&     
+            
               
               
               
