@@ -50,8 +50,9 @@ USER gitpod
 
 
 
-# Cleaning
-RUN apt-get clean
 
 # Give back control
 USER root
+
+# Cleaning
+RUN apt-get clean
