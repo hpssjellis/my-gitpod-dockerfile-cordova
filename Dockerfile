@@ -40,7 +40,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  
  #RUN sdkmanager --no-ui --force --all "platform-tools" 
 
- RUN yes | sdkmanager --licenses
+ #RUN yes | sdkmanager --licenses
  
  #RUN sdkmanager              \
  #    "platform-tools"        \
