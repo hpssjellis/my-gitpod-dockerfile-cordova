@@ -67,7 +67,7 @@ WORKDIR /home/gitpod/rocksetta/android
 RUN echo "Where are we after WORKDIR change\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
 RUN pwd >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
-RUN sdkmanager --list >> /home/gitpod/rocksetta/logs/mylogs.txt 
+RUN sdkmanager --list 
 
 RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
