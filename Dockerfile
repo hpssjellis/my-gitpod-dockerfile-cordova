@@ -10,9 +10,9 @@ RUN apt-get update \
 # --- Install Gradle from PPA
 
 # Gradle PPA
-RUN apt-get update \
- && apt-get -y install gradle \
- && gradle -v
+# RUN apt-get update \
+# && apt-get -y install gradle \
+# && gradle -v
 
 
 
