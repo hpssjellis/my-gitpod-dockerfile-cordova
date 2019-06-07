@@ -27,7 +27,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 
 
 
-RUN /home/gitpod/rocksetta/android/tools/bin/sdkmanager 'platform-tools'
+#RUN sdkmanager 'platform-tools'
 
  #RUN  /home/gitpod/rocksetta/android/tools/bin/sdkmanager --licenses "platform-tools"  "platforms;android-28"   "build-tools;28.0.3" 
  
