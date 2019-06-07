@@ -36,7 +36,10 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 
 #RUN for i in 1 2 3 4 5 6; do  y | sdkmanager --licenses; done
 
-RUN yes yes yes yes yes yes | sdkmanager --licenses
+#RUN yes yes yes yes yes yes | sdkmanager --licenses
+
+RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
+
 
  #y | sdkmanager --licenses \
 #RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
