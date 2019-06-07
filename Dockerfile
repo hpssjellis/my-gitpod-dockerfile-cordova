@@ -57,14 +57,14 @@ RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylo
 # Install the android software tools. Needs a fancy loop to accept licenses
 
 
-RUN echo Where are we\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
+RUN echo "Where are we before WORKDIR\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
 RUN pwd >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 
 WORKDIR /home/gitpod/rocksetta/android
 
 
-RUN echo Where are we after workdir change\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
+RUN echo "Where are we after WORKDIR change\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
 RUN pwd >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
