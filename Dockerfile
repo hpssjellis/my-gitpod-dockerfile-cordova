@@ -35,7 +35,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  ENV ANDROID_SDK_ROOT /home/gitpod/rocksetta/android
  ENV ANDROID_HOME /home/gitpod/rocksetta/android
  ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
- ENV PATH ${PATH}:/home/gitpod/rocksetta/qrcode-cordova:/home/gitpod/rocksetta/qrcode-cordova/node_modules:/home/gitpod/rocksetta/qrcode-cordova/node_modules/cordova/bin:/home/gitpod/rocksetta/qrcode-cordova/node_modules/qrcode/bin
+ ENV PATH ${PATH}:/home/gitpod/rocksetta/:/home/gitpod/rocksetta/qrcode-cordova:/home/gitpod/rocksetta/qrcode-cordova/node_modules:/home/gitpod/rocksetta/qrcode-cordova/node_modules/cordova/bin:/home/gitpod/rocksetta/qrcode-cordova/node_modules/qrcode/bin
  
  
  #RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn '"${ANDROID_HOME}"'/tools/bin/sdkmanager --licenses; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
@@ -52,17 +52,17 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 
 RUN npm --prefix /home/gitpod/rocksetta/qrcode-cordova install cordova qrcode
 
-RUN echo "Hello from the Dockerfile build\n" &>> /home/gitpod/rocksetta/logs/mylogs.txt 
+RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 # Install the android software tools. Needs a fancy loop to accept licenses
 WORKDIR /home/gitpod/rocksetta/android
 
 
-RUN pwd &>> /home/gitpod/rocksetta/logs/mylogs.txt 
+RUN pwd >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
-RUN ls -la &>> /home/gitpod/rocksetta/logs/mylogs.txt 
+RUN ls -la >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
  
 #----- specific to gitpod
