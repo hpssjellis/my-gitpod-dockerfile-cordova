@@ -15,12 +15,12 @@ RUN apt-get update \
 # test more android installation
 
 
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
-    && unzip sdk-tools-linux-4333796.zip    \
-    && rm sdk-tools-linux-4333796.zip   
+#RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
+#    && unzip sdk-tools-linux-4333796.zip    \
+#    && rm sdk-tools-linux-4333796.zip   
     
     
-RUN yes | /home/gitpod/tools/bin/sdkmanager --licenses && yes | /home/gitpod/tools/bin/sdkmanager --update
+#RUN yes | sdkmanager --licenses && yes | sdkmanager --update
 
 
     #\
@@ -41,6 +41,12 @@ RUN yes | /home/gitpod/tools/bin/sdkmanager --licenses && yes | /home/gitpod/too
 
 
 USER gitpod
+
+
+
+RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
+
+
 
 RUN mkdir -p /home/gitpod/rocksetta/logs                        \ 
     && mkdir -p /home/gitpod/rocksetta/android                  \ 
@@ -79,7 +85,6 @@ RUN npm --prefix /home/gitpod/rocksetta/qrcode-cordova install cordova qrcode
 
 
 
-RUN echo "Hello from the Dockerfile build\n" >> /home/gitpod/rocksetta/logs/mylogs.txt 
 
 
 
