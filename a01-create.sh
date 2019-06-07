@@ -15,7 +15,7 @@ apachectl start
 echo "Enter a folder name, no spaces, no dashes, underscore allowed, for your app and folder example: helloWorld"
 read wow4
 
-cordova create $wow4 com.$wow4.$wow4 $wow4 --no-telemetry
+cordova create $wow4 com.$wow4.$wow4 $wow4 
 #cordova create hello com.example.hello HelloWorld
 
 
