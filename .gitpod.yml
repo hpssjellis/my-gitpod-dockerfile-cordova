@@ -20,8 +20,7 @@ tasks:
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a04-read-Docker-log.sh       &&    
 
              
-              yes | sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"       &&     
-              cordova --no-telemetry -v                                                           && 
+              yes | sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"       &&    
               
               
               
