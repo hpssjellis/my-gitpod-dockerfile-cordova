@@ -6,6 +6,8 @@ RUN apt-get update \
     && apt-get install -y default-jdk \
     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
+USER gitpod
+
 RUN mkdir -p /home/gitpod/rocksetta/logs                        \ 
     && mkdir -p /home/gitpod/rocksetta/android                  \ 
     && mkdir -p /home/gitpod/rocksetta/qrcode-cordova           \
@@ -52,7 +54,7 @@ RUN npm install -g cordova qrcode
 
 
 # Give back control
-#USER root
+USER root
 
 # Cleaning
 RUN apt-get clean
