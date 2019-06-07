@@ -21,12 +21,12 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  
  #ENV PATH ${PATH}:/home/gitpod/rocksetta/android/tools:/home/gitpod/rocksetta/android/tools/bin:/home/gitpod/rocksetta/android/platform-tools   
 
- RUN yes | sdkmanager --licenses
+ RUN sdkmanager --licenses
  
  RUN sdkmanager  "tools" "platform-tools"
  
  
- RUN yes | sdkmanager        \
+ RUN sdkmanager              \
      "platform-tools"        \
     "platforms;android-28"   \
     "build-tools;28.0.3" 
@@ -39,7 +39,7 @@ RUN apt-get update \
  && apt-get -y install gradle \
  && gradle -v
 
-RUN npm install -g ionic cordova
+RUN npm install -g cordova
  
 #RUN yes | /home/gitpod/rocksetta/android/tools/bin/sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"    
 
