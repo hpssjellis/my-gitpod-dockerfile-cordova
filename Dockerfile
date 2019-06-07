@@ -6,6 +6,16 @@ RUN apt-get update \
     && apt-get install -y default-jdk \
     && apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 
+
+# --- Install Gradle from PPA
+
+# Gradle PPA
+RUN apt-get update \
+ && apt-get -y install gradle \
+ && gradle -v
+
+
+
 USER gitpod
 
 RUN mkdir -p /home/gitpod/rocksetta/logs                        \ 
@@ -32,12 +42,6 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
 
-# --- Install Gradle from PPA
-
-# Gradle PPA
-RUN apt-get update \
- && apt-get -y install gradle \
- && gradle -v
 
 
 # ----install Cordova, could also install ionic here
