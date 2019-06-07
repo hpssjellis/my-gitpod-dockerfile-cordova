@@ -1,28 +1,24 @@
 image:
   file: Dockerfile
 
-
+ports:
+  - port: 8000
 
 tasks:
-  -  init: mkdir /workspace/my-gitpod-dockerfile-cordova/logs  &&
+  -  init: mkdir /workspace/my-gitpod-dockerfile-cordova/logs                                  &&
+           yes | sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"       && 
            touch /workspace/my-gitpod-dockerfile-cordova/logs.txt 
            
              
              
-     command: echo "ls -la"           &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&    
-              ls -la                  &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&        
-              echo                    &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  && 
-              
-              
+     command: echo "First Line in .gitpod.yml installation\n"     &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&  
+              echo "Setting bash files to be runnable\n"          &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&        
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a01-create.sh                &&    
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a02-re-build.sh              &&    
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a03-copy-to-folder.sh        &&    
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a04-read-Docker-log.sh       &&    
-
-             
-              yes | sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"       &&    
-              
-              
-              
-              
-              echo "Last line in logs"                   &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  
+              echo "Starting Apache\n"                            &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&   
+              apachectl start                                                               &&
+              gp await-port 8000                                                            && 
+              gp preview $(gp url 8000)                                                     &&
+              echo "Last line in logs\n"                          &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  
