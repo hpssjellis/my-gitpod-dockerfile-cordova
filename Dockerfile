@@ -44,7 +44,7 @@ RUN npm install -g cordova qrcode
  
 #----- specific to gitpod
 USER gitpod
-   #RUN chmod +x a01-create.sh && chmod +x a02-re-build.sh && chmod +x a03-copy-to-folder.sh
+   RUN chmod +x a01-create.sh && chmod +x a02-re-build.sh && chmod +x a03-copy-to-folder.sh
    
    
 
