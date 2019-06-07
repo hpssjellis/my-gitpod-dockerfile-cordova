@@ -29,11 +29,11 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 
 #RUN sdkmanager 'platform-tools'
 
- RUN  sdkmanager "platform-tools"  "platforms;android-28"   "build-tools;28.0.3" 
+ #RUN  sdkmanager "platform-tools"  "platforms;android-28"   "build-tools;28.0.3" 
  
  
  
- #RUN sdkmanager  "tools" "platform-tools"
+ RUN sdkmanager --no-ui --force --all "platform-tools" 
 
  
  #RUN sdkmanager              \
