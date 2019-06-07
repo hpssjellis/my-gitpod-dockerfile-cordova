@@ -1,2 +1,26 @@
 image:
   file: Dockerfile
+
+
+
+tasks:
+  -  init: mkdir /workspace/my-gitpod-dockerfile-cordova/logs  &&
+           touch /workspace/my-gitpod-dockerfile-cordova/logs.txt 
+           
+             
+             
+     command: echo "ls -la"           &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&    
+              ls -la                  &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&        
+              echo                    &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  && 
+              
+              
+              chmod +x /workspace/my-gitpod-dockerfile-cordova/a01-create.sh                &&    
+              chmod +x /workspace/my-gitpod-dockerfile-cordova/a02-re-build.sh              &&    
+              chmod +x /workspace/my-gitpod-dockerfile-cordova/a03-copy-to-folder.sh        &&    
+                      
+              
+              
+              
+              
+              
+              echo "Last line in logs"                   &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  
