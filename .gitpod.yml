@@ -2,7 +2,7 @@ image:
   file: Dockerfile
 
 ports:
-  - port: 8000
+  - port: 8001
 
 tasks:
   -  init: mkdir /workspace/my-gitpod-dockerfile-cordova/logs                                  &&
@@ -19,6 +19,6 @@ tasks:
               chmod +x /workspace/my-gitpod-dockerfile-cordova/a04-read-Docker-log.sh       &&    
               echo "Starting Apache\n"                            &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  &&   
               apachectl start                                                               &&
-              gp await-port 8000                                                            && 
-              gp preview $(gp url 8000)                                                     &&
+              gp await-port 8001                                                            && 
+              gp preview $(gp url 8001)                                                     &&
               echo "Last line in logs\n"                          &>> /workspace/my-gitpod-dockerfile-cordova/logs.txt  
