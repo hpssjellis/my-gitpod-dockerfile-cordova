@@ -33,6 +33,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  ENV ANDROID_SDK_ROOT /home/gitpod/rocksetta/android
  ENV ANDROID_HOME /home/gitpod/rocksetta/android
  ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
+ ENV PATH ${PATH}:/home/gitpod/rocksetta/qrcode-cordova:/home/gitpod/rocksetta/qrcode-cordova/node_modules:/home/gitpod/rocksetta/qrcode-cordova/node_modules/cordova/bin:/home/gitpod/rocksetta/qrcode-cordova/node_modules/qrcode/bin
  
  
  #RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn '"${ANDROID_HOME}"'/tools/bin/sdkmanager --licenses; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
@@ -41,14 +42,14 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
  
  #RUN #!/bin/bash /usr/bin/expect -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
- RUN #!/bin/bash /home/gitpod/rocksetta/android -c ' set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
+ RUN #!/bin/bash /usr/bin/expect -c ' cd/home/gitpod/rocksetta/android;   set timeout -1; spawn  sdkmanager --licenses "platform-tools" "build-tools;28.0.3" "platforms;android-28"    ; expect { "y/N" { exp_send "y\r" ; exp_continue } eof} '
 
 
 
 
 # ----install Cordova, could also install ionic here
 
-RUN npm install -g cordova qrcode
+RUN npm --prefix /home/gitpod/rocksetta/qrcode-cordova install cordova qrcode
  
 #----- specific to gitpod
 #USER gitpod
