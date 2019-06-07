@@ -13,7 +13,8 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
     && wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip       \
     && unzip sdk-tools-linux-4333796.zip -d /home/gitpod/rocksetta/android             \
     && rm sdk-tools-linux-4333796.zip                                                  \
-    && chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager                   
+    && chmod 755 -R /home/gitpod/rocksetta                  
+   # && chmod 755 /home/gitpod/rocksetta/android/tools/bin/sdkmanager                   
  
  ENV ANDROID_SDK_ROOT /home/gitpod/rocksetta/android
  ENV ANDROID_HOME /home/gitpod/rocksetta/android
@@ -38,7 +39,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 
 #RUN yes yes yes yes yes yes | sdkmanager --licenses
 
-RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
+#RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
 
 
  #y | sdkmanager --licenses \
