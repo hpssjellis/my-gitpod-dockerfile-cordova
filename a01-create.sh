@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ANDROID_SDK_ROOT="/workspace/rocksetta-gitpod-links/android/"
+#export ANDROID_SDK_ROOT="/workspace/rocksetta-gitpod-links/android/"
 #echo $ANDROID_SDK_ROOT
 
 #export PATH="${PATH}:${ANDROID_HOME}tools/:${ANDROID_HOME}platform-tools/"
@@ -29,16 +29,16 @@ cordova build android --no-telemetry
 
 
 
-cp /workspace/my-gitpod-cordova/$wow4/platforms/android/app/build/outputs/apk/debug/app-debug.apk /workspace/my-gitpod-cordova/public/$wow4-app-debug.apk
+cp /workspace/my-gitpod-dockerfile-cordova/$wow4/platforms/android/app/build/outputs/apk/debug/app-debug.apk /workspace/my-gitpod-dockerfile-cordova/public/$wow4-app-debug.apk
 
 
 
-qrcode -o /workspace/my-gitpod-cordova/public/qrout.png $(gp url 8001);
-echo "<br><img src='qrout.png'><br>" >> /workspace/my-gitpod-cordova/public/index.html
+qrcode -o /workspace/my-gitpod-dockerfile-cordova/public/qrout.png $(gp url 8001);
+echo "<br><img src='qrout.png'><br>" >> /workspace/my-gitpod-dockerfile-cordova/public/index.html
 
 #printf "\n\n<a href='$wow4/platforms/android/app/build/outputs/apk/$wow4-debug.apk'>$wow4/platforms/android/app/build/outputs/apk/$wow4-debug.apk
 
-echo "<li><a href="$wow4-app-debug.apk">$wow4-app-debug.apk</a><br>" >> /workspace/my-gitpod-cordova/public/index.html
+echo "<li><a href="$wow4-app-debug.apk">$wow4-app-debug.apk</a><br>" >> /workspace/my-gitpod-dockerfile-cordova/public/index.html
 
 
 #open the preview pane
