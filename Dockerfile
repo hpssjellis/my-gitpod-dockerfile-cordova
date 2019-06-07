@@ -34,9 +34,7 @@ RUN mkdir -p /home/gitpod/rocksetta/logs                        \
 
 #RUN printf "y\ny\ny\ny\ny\ny\n" | sdkmanager --licenses
 
-RUN for i in {1..6}; do \
-       echo "hi"
-    done
+RUN for i in x y z; do echo "$i"; done
 
  #y | sdkmanager --licenses \
 #RUN sdkmanager --licenses <<< "y\ny\ny\ny\ny\ny\n"
