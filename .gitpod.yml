@@ -22,7 +22,7 @@ tasks:
              
               yes | sdkmanager "platform-tools" "build-tools;28.0.3" "platforms;android-28"       &&     
             
-              
+              cordova --no-telemetry -v
               
               
               
