@@ -17,7 +17,7 @@ https://gitpod.io/#github.com/hpssjellis/my-gitpod-android
 
 Try this Android Cordova build latest snapshot
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#snapshot/c7bb5b50-55d4-40f4-a59d-22af84f3dae2)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#snapshot/73593db4-5e36-4166-956c-2c2048d62839)
 
 
 In the terminal type
